@@ -68,7 +68,7 @@ MongoClient.connect(
     // db.collection("tasks").insertMany(
     //   [
     //     {
-    //       desctiption: "Study English",
+    //       description: "Study English",
     //       completed: false
     //     },
     //     {
@@ -151,5 +151,39 @@ MongoClient.connect(
     //   .catch(err => {
     //     console.log(err);
     //   });
+
+    // db.collection("tasks")
+    //   .updateMany(
+    //     { completed: false },
+    //     {
+    //       $set: {
+    //         completed: true
+    //       }
+    //     }
+    //   )
+    //   .then(result => {
+    //     console.log(result.modifiedCount);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+
+    // db.collection("users")
+    //   .deleteMany({ age: 30 })
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+
+    db.collection("tasks")
+      .deleteOne({ desctiption: "Study English" })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(result);
+      });
   }
 );
